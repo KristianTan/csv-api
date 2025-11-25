@@ -25,4 +25,9 @@ public class ItemController {
     public List<Item> getAllItems() {
         return repo.findAll();
     }
+
+    @GetMapping("/{customerRef}")
+    public List<Item> getItemsByCustomerReference(@PathVariable String customerRef) {
+        return repo.findByCustomerRef(customerRef);
+    }
 }
